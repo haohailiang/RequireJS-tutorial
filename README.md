@@ -51,7 +51,20 @@ shim: {
 	'bootstrap' : ['jquery']
 }
 ```
-
+## map
+同一个项目中可以使用不同的jquery版本
+```
+map : {
+	'app/api' : {
+		'jquery' : './lib/jquery'
+	},
+	'app/api2' : {
+		'jquery' : './lib/jquery2'
+	}
+}
+```
+当app/api模块里加载jquery模块时,将加载jquery.js  
+当app/api2模块里加载jquery模块时,将加载jquery2.js  
 
 
 

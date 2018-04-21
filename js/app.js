@@ -5,6 +5,7 @@ requirejs.config({
 			'//cdn.bootcss.com/jquery/1.9.1/jquery.min',
 			'./lib/jquery'
 		],
+		// 'jquery'        : './lib/jquery',
 		'bootstrap'     : './lib/bootstrap',
 		'modernizr'     : './lib/modernizr',
 		'backbone'      : './lib/backbone',
@@ -15,19 +16,21 @@ requirejs.config({
 			exports: 'Modernizr'
 		},
 		'bootstrap' : ['jquery']
-	}
+	},
+	// map : {
+	// 	'*' : {
+	// 		'jquery' : './lib/jquery'
+	// 	},
+	// 	'app/api2' : {
+	// 		'jquery' : './lib/jquery2'
+	// 	}
+	// }
 });
 
-require(['jquery', './app/api', 'modernizr', 'backbone', 'bootstrap'], function($, api, modernizr, backbone, bootstrap) {
-
+require(['./app/api2'], function(api) {
 	$('#jUser').click(function(){
 		api.getUser().then(function(user) {
 			console.log(user);
 		});
 	});
-});
-
-require(['helper'], function(helper) {
-	var str = helper.trim('   amd   ');
-	console.log(str);
 });
