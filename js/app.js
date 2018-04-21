@@ -34,6 +34,6 @@ require(['./app/api'], function(api) {
 	});
 });
 
-function onloaded(user) {
-	console.log(user);
-}
+// function onloaded(user) {
+// 	console.log(user);
+// }

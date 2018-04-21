@@ -13,7 +13,10 @@ define(['jquery'], function($) {
 			$.ajax({
 				url: 'http://127.0.0.1:8081/user.js',
 				dataType: 'jsonp',
-				jsonCallback: 'onloaded'
+				jsonpCallback: 'onloaded',
+				success: function(data) {
+					console.log(data);
+				}
 			});
 		}
 	}
