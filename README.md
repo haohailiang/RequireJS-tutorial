@@ -120,7 +120,13 @@ config : {
 	}
 }
 ```
-
+## 打包工具r.js
+[r.js插件](https://github.com/requirejs/r.js)
+```
+npm install -g requirejs
+r.js -o baseUrl=js name=app out=build.js
+node r.js -o baseUrl=js name=app out=build.js
+```
 
 
 
