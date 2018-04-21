@@ -10,14 +10,17 @@ define(['jquery'], function($) {
 		},
 
 		getUserByJsonp: function() {
-			$.ajax({
-				url: 'http://127.0.0.1:8081/user.js',
-				dataType: 'jsonp',
-				jsonpCallback: 'onloaded',
-				success: function(data) {
-					console.log(data);
-				}
-			});
+			// $.ajax({
+			// 	url: 'http://127.0.0.1:8081/user.js',
+			// 	dataType: 'jsonp',
+			// 	jsonpCallback: 'onloaded',
+			// 	success: function(data) {
+			// 		console.log(data);
+			// 	}
+			// });
+			require(['http://127.0.0.1:8081/user-amd.js'], function(user) {
+				console.log(user);
+			})
 		}
 	}
 });
