@@ -28,10 +28,12 @@ requirejs.config({
 	// }
 });
 
-require(['./app/api2'], function(api) {
+require(['./app/api'], function(api) {
 	$('#jUser').click(function(){
-		api.getUser().then(function(user) {
-			console.log(user);
-		});
+		api.getUserByJsonp();
 	});
 });
+
+function onloaded(user) {
+	console.log(user);
+}
