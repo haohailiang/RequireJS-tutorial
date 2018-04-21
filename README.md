@@ -65,8 +65,15 @@ map : {
 ```
 当app/api模块里加载jquery模块时,将加载jquery.js  
 当app/api2模块里加载jquery模块时,将加载jquery2.js  
-
-
+## waitSeconds
+下载js等待的时间,默认7秒  
+如果设为0, 则禁用等待超时  
+## urlArgs
+下载文件时,在url后面增加额外的query参数
+```
+urlArgs: '+=' + (new Date)
+```
+## 
 
 
 

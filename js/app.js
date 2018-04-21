@@ -1,5 +1,6 @@
 requirejs.config({
 	baseUrl: '/js',
+	urlArgs: '_=' + (+new Date),
 	paths: {
 		'jquery': [
 			'//cdn.bootcss.com/jquery/1.9.1/jquery.min',
