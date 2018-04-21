@@ -27,6 +27,13 @@ requirejs.config({
 	// 		'jquery' : './lib/jquery2'
 	// 	}
 	// }
+	config: {
+		text: {
+			onXhr: function(xhr, url) {
+				xhr.setRequestHeader('X-Requested-with', 'XMLHttpRequest')
+			}
+		}
+	}
 });
 
 require(['./app/api'], function(api) {
