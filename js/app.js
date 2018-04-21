@@ -1,3 +1,10 @@
+var language = document.cookie.match(/language=([^;]+)/);
+var locale = 'zh';
+if(language) {
+	// document.cookie = "language=en_US"
+	locale = language[1].split('_')[0];
+}
+
 requirejs.config({
 	baseUrl: '/js',
 	urlArgs: '_=' + (+new Date),
@@ -13,7 +20,8 @@ requirejs.config({
 		'underscore'    : './lib/underscore',
 		'text'          : './lib/require/text',
 		'jquery-ui'     : './lib/jquery-ui',
-		'css'           : './lib/require/css'
+		'css'           : './lib/require/css',
+		'i18n'          : './lib/require/i18n'
 	},
 	shim: {
 		'modernizr' : {
@@ -35,22 +43,27 @@ requirejs.config({
 	// 		'css' : './lib/require/css'
 	// 	}
 	// },
-	config: {
+	config : {
 		text: {
 			onXhr: function(xhr, url) {
 				xhr.setRequestHeader('X-Requested-with', 'XMLHttpRequest')
 			}
+		},
+		i18n : {
+			locale : locale
 		}
 	}
 });
 
 require([
-	'./app/api', 
-	'backbone', 
+	'./app/api',
+	'backbone',
+	'i18n!./nls/messages',
 	'jquery-ui'
 	// 'css!/css/jquery-ui/jquery-ui.css',
 	// 'css!/css/jquery-ui/jquery-ui.theme.css',
-	], function(api) {
+	], function(api, Backbone, i18n) {
+	$('#jUser').after('<button class="btn btn-default">' + i18n.edit + '</button>');
 	$('#jUser').click(function(){
 		// api.getUserByJsonp();
 		api.loadUser();
