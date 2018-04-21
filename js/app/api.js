@@ -21,6 +21,12 @@ define(['jquery'], function($) {
 			require(['http://127.0.0.1:8081/user-amd.js'], function(user) {
 				console.log(user);
 			})
+		},
+
+		loadUser: function() {
+			require(['text!/template/user.html!strip'], function(template) {
+				$('#userinfo').html(template);
+			});
 		}
 	}
 });

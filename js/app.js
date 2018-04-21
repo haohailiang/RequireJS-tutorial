@@ -10,7 +10,8 @@ requirejs.config({
 		'bootstrap'     : './lib/bootstrap',
 		'modernizr'     : './lib/modernizr',
 		'backbone'      : './lib/backbone',
-		'underscore'    : './lib/underscore'
+		'underscore'    : './lib/underscore',
+		'text'          : './lib/text'
 	},
 	shim: {
 		'modernizr' : {
@@ -30,7 +31,8 @@ requirejs.config({
 
 require(['./app/api'], function(api) {
 	$('#jUser').click(function(){
-		api.getUserByJsonp();
+		// api.getUserByJsonp();
+		api.loadUser();
 	});
 });
 

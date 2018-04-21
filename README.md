@@ -73,7 +73,15 @@ map : {
 ```
 urlArgs: '+=' + (new Date)
 ```
-## 
+## 使用text插件加载html
+[text插件](https://github.com/requirejs/text)  
+用于加载文本文件的requirejs插件  
+通过ajax请求来加载文本  
+```
+require(['text!user.html'], function(template) {
+	$('#userinfo').html(template);
+});
+```
 
 
 
