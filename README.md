@@ -25,3 +25,66 @@ require(['helper'], function(helper) {
 	console.log(str);
 });
 ```
+## 配置不支持AMD的库和插件
+```
+shim: {
+	'modernizr' : {
+		deps: ['jquery'],
+		exports: 'Modernizr',
+		init: function($) {
+			return $;
+		}
+	}
+}
+```
+### 加载不支持AMD的库[Modernizr.js]
+```
+shim: {
+	'modernizr' : {
+		exports: 'Modernizr'
+	}
+}
+```
+### 加载不支持AMD的框架[bootstrap]
+```
+shim: {
+	'bootstrap' : ['jquery']
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
