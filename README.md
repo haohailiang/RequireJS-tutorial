@@ -82,10 +82,44 @@ require(['text!user.html'], function(template) {
 	$('#userinfo').html(template);
 });
 ```
-
-
-
-
+## 使用CSS插件加载样式
+[CSS插件](https://github.com/guybedford/require-css)
+```
+require([
+	'./app/api',
+	'backbone',
+	'jquery-ui',
+	'css!/css/jquery-ui/jquery-ui.css',
+	'css!/css/jquery-ui/jquery-ui.theme.css',
+],function(api) {});
+```
+为了让CSS!生效, 在requirejs里设置
+```
+map: {
+	'*' : {
+		'css' : './lib/require/css'
+	}
+}
+```
+## i18n
+[i18n插件](https://github.com/requirejs/i18n)
+```
+require([
+	'./app/api',
+	'backbone',
+	'i18n!./nls/messages',
+	'jquery-ui'
+], function(api, Backbone, i18n) {});
+```
+## 如何制定使用哪种语言?
+浏览器的navigator.language或navigator.userLanguage
+```
+config : {
+	i18n: {
+		locale : 'zh'
+	}
+}
+```
 
 
 

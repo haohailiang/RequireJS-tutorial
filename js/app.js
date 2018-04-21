@@ -11,13 +11,16 @@ requirejs.config({
 		'modernizr'     : './lib/modernizr',
 		'backbone'      : './lib/backbone',
 		'underscore'    : './lib/underscore',
-		'text'          : './lib/text'
+		'text'          : './lib/require/text',
+		'jquery-ui'     : './lib/jquery-ui',
+		'css'           : './lib/require/css'
 	},
 	shim: {
 		'modernizr' : {
 			exports: 'Modernizr'
 		},
-		'bootstrap' : ['jquery']
+		'bootstrap' : ['jquery'],
+		'jquery-ui' : ['css!/css/jquery-ui/jquery-ui.css', 'css!/css/jquery-ui/jquery-ui.theme.css']
 	},
 	// map : {
 	// 	'*' : {
@@ -27,6 +30,11 @@ requirejs.config({
 	// 		'jquery' : './lib/jquery2'
 	// 	}
 	// }
+	// map: {
+	// 	'*' : {
+	// 		'css' : './lib/require/css'
+	// 	}
+	// },
 	config: {
 		text: {
 			onXhr: function(xhr, url) {
@@ -36,7 +44,13 @@ requirejs.config({
 	}
 });
 
-require(['./app/api'], function(api) {
+require([
+	'./app/api', 
+	'backbone', 
+	'jquery-ui'
+	// 'css!/css/jquery-ui/jquery-ui.css',
+	// 'css!/css/jquery-ui/jquery-ui.theme.css',
+	], function(api) {
 	$('#jUser').click(function(){
 		// api.getUserByJsonp();
 		api.loadUser();
