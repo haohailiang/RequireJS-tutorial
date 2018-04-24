@@ -9,12 +9,20 @@ requirejs.config({
 	baseUrl: 'js/lib',
 	urlArgs: '_=' + (+new Date),
 	paths: {
-		app    : '../app',
-		nls    : '../nls',
-		'jquery'        : [
+		app           : '../app',
+		nls           : '../nls',
+		css           : '../../css',
+		jquery        : [
 			'//cdn.bootcss.com/jquery/1.9.1/jquery.min',
 			'./jquery'
 		],
+	},
+	shim: {
+		'modernizr' : {
+			exports: 'Modernizr'
+		},
+		'bootstrap' : ['jquery'],
+		'jquery-ui' : ['css!css/jquery-ui/jquery-ui.css', 'css!css/jquery-ui/jquery-ui.theme.css']
 	},
 	config : {
 		text: {

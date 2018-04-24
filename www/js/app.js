@@ -1,5 +1,5 @@
 requirejs(['./require.config'], function () {
-	require(['app/api','i18n!nls/messages', 'app/helper'], function(api, i18n, helper) {
+	require(['app/api','i18n!nls/messages', 'app/helper', 'modernizr', 'backbone'], function(api, i18n, helper, modernizr, backbone) {
 
 		// promise使用
 		// api.getUser().then(function(user) {
@@ -16,6 +16,9 @@ requirejs(['./require.config'], function () {
 
 		var str = helper.trim('   amd   ');
 		console.log(str);
+
+		console.log(modernizr);
+		console.log(backbone);
 	});
 });
 
