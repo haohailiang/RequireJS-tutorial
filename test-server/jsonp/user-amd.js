@@ -1,6 +1,7 @@
-onloaded({
+define({
 	username: 'haohailiang',
 	name: 'haohailiang',
 	email: 'xxx@126com',
-	gender: 'male'
+	gender: 'male',
+	desc: 'requirejs Jsonp调用'
 });
