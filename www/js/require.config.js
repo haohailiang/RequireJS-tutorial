@@ -7,9 +7,14 @@ if(language) {
 
 requirejs.config({
 	baseUrl: 'js/lib',
+	urlArgs: '_=' + (+new Date),
 	paths: {
 		app    : '../app',
-		nls    : '../nls'
+		nls    : '../nls',
+		'jquery'        : [
+			'//cdn.bootcss.com/jquery/1.9.1/jquery.min',
+			'./jquery'
+		],
 	},
 	config : {
 		text: {
