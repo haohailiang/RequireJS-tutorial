@@ -12,6 +12,9 @@ requirejs(['./require.config'], function () {
 		// requiresjs-jsonp使用
 		// api.getUserByJsonp2();
 		
+		// 加载html模板
+		api.loadUser();
+		
 		$('#jUser').after('<button class="btn btn-default">' + i18n.edit + '</button>');
 
 		var str = helper.trim('   amd   ');

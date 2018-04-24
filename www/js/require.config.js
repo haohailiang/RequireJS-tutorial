@@ -24,6 +24,14 @@ requirejs.config({
 		'bootstrap' : ['jquery'],
 		'jquery-ui' : ['css!css/jquery-ui/jquery-ui.css', 'css!css/jquery-ui/jquery-ui.theme.css']
 	},
+	// map : {
+	// 	'*' : {
+	// 		'jquery' : './jquery-1.9.1'
+	// 	},
+	// 	'app/api2' : {
+	// 		'jquery' : './jquery-1.11.1'
+	// 	}
+	// },
 	config : {
 		text: {
 			onXhr: function(xhr, url) {

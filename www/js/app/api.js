@@ -26,6 +26,12 @@ define(['jquery'], function($) {
 			})
 		},
 
+		loadUser: function() {
+			require(['text!/user.html!strip'], function(template) {
+				$('#userinfo').html(template);
+			});
+		}
+
 	}
 });
 
