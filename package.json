@@ -1,0 +1,14 @@
+{
+  "name": "RequireJS-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "server"   : "http-server ./test-server/jsonp -p 8081",
+    "start"    : "http-server ./www -p 8080",
+    "build"    : "node tools/r.js -o tools/build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -39,7 +39,7 @@ requirejs.config({
 			}
 		},
 		i18n : {
-			locale : locale
+			locale : typeof locale === 'undefined' ? 'zh' : locale
 		}
 	}
 });
