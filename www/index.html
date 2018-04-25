@@ -12,6 +12,11 @@
 	<button class="btn btn-primary" id="jUser">获取用户信息并打印</button>
 	<div id="userinfo"></div>
 </div>
-<script src="js/lib/require.js" data-main="js/app"></script>
+<script src="js/lib/require.js"></script>
+<script>
+requirejs(['./js/common'], function (common) {
+	requirejs(['app/main1']);
+});
+</script>
 </body>
 </html>
