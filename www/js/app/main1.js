@@ -9,7 +9,7 @@
 //     console.log(i18n);
 // });
 
-define(['./api','i18n!nls/messages', './helper', 'modernizr', 'backbone'], function(api, i18n, helper, modernizr, backbone) {
+define(['./api','i18n!nls/messages', './helper', 'modernizr', 'backbone', 'jquery-ui'], function(api, i18n, helper, modernizr, backbone) {
 
 	// promise使用
 	api.getUser().then(function(user) {
@@ -32,4 +32,6 @@ define(['./api','i18n!nls/messages', './helper', 'modernizr', 'backbone'], funct
 
 	console.log(modernizr);
 	console.log(backbone);
+
+	$('#dialog').dialog();
 });

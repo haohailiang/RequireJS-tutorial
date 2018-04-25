@@ -8,11 +8,12 @@ if(language) {
 requirejs.config({
     baseUrl: 'js/lib',
     urlArgs: '_=' + (+new Date),
+	// optimize: 'none',
     paths: {
         app: '../app',
-        nls           : '../nls',
-        css           : '../../css',
+        nls           : '../nls'
     },
+    inlineText: false,
     shim: {
         backbone: {
             deps: ['jquery', 'underscore'],
@@ -25,7 +26,7 @@ requirejs.config({
             exports: 'Modernizr'
         },
         'bootstrap' : ['jquery'],
-        'jquery-ui' : ['css!css/jquery-ui/jquery-ui.css', 'css!css/jquery-ui/jquery-ui.theme.css']
+        'jquery-ui' : ['css!../jquery-ui/jquery-ui.css', 'css!../jquery-ui/jquery-ui.theme.css']
     },
     config : {
         text: {
